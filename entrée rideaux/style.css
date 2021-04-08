@@ -106,12 +106,18 @@ div#theatre {
     #theatre style:before {content:'Les Styles';display:block;text-align:center;font-size:20px;}
 
     div#wood {
-        
-        
         width: 100%;
         height: 30rem;
         background: radial-gradient(ellipse at center, #d3b865 0%,#d6ba66 26%,#ad9553 63%,#7c6c3b 100%);
         background-position-y: -200px;
+    }
+
+    div#logo_front{
+        position: absolute;
+        background-image: url(../Logo/logo_blanc.svg);
+        width: 50%;
+        height: 200px;
+        z-index: 1000;
     }
 
     button#enter_front {
