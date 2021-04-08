@@ -21,11 +21,6 @@ app.get("/admin", (req, res) => {
   });
 });
 
-app.put("/users", (req, res) => {
-  console.log(req.body);
-  res.send(`My name is ${req.body.name}`);
-});
-
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
