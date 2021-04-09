@@ -13,6 +13,78 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
+//*partie admin
+app.get("/admin", (req, res) => {
+  mysqlUtilities.getAdmin((result, error) => {
+    if (!error) {
+      console.log(result);
+      res.send(result);
+    } else {
+      res.status(500).send(error);
+    }
+  });
+});
+
+// afficher admin par mail //
+app.get("/admin/:mail", (req, res) => {
+  let mail = req.params.mail;
+  mysqlUtilities.getAdminByMail((result, error) => {
+    if (!error) {
+      console.log(result);
+      res.send(result);
+    } else {
+      res.status(500).send(error);
+    }
+  }, mail);
+});
+
+//----------afficher apprenant-------------//
+app.get("/apprenant", (req, res) => {
+  mysqlUtilities.getApprenant((result, error) => {
+    if (!error) {
+      console.log(result);
+      res.send(result);
+    } else {
+      res.status(500).send(error);
+    }
+  });
+});
+
+app.get("/apprenant/:mail", (req, res) => {
+  let mail = req.params.mail;
+  mysqlUtilities.getApprenantByMail((result, error) => {
+    if (!error) {
+      console.log(result);
+      res.send(result);
+    } else {
+      res.status(500).send(error);
+    }
+  }, mail);
+});
+
+app.get("/enseignant", (req, res) => {
+  mysqlUtilities.getEnseignant((result, error) => {
+    if (!error) {
+      console.log(result);
+      res.send(result);
+    } else {
+      res.status(500).send(error);
+    }
+  });
+});
+
+app.get("/enseignant/:mail", (req, res) => {
+  let mail = req.params.mail;
+  mysqlUtilities.getEnseignantByMail((result, error) => {
+    if (!error) {
+      console.log(result);
+      res.send(result);
+    } else {
+      res.status(500).send(error);
+    }
+  }, mail);
+});
+
 //*ajoute un apprenant
 
 app.post("/apprenant", (req, res) => {
@@ -95,78 +167,6 @@ app.post("/admin/enseignant", (req, res) => {
       res.status(500).send(error);
     }
   }, user);
-});
-
-//*partie admin
-app.get("/admin", (req, res) => {
-  mysqlUtilities.getAdmin((result, error) => {
-    if (!error) {
-      console.log(result);
-      res.send(result);
-    } else {
-      res.status(500).send(error);
-    }
-  });
-});
-
-// afficher admin par mail //
-app.get("/admin/:mail", (req, res) => {
-  let mail = req.params.mail;
-  mysqlUtilities.getAdminByMail((result, error) => {
-    if (!error) {
-      console.log(result);
-      res.send(result);
-    } else {
-      res.status(500).send(error);
-    }
-  }, mail);
-});
-
-//----------afficher apprenant-------------//
-app.get("/apprenant", (req, res) => {
-  mysqlUtilities.getApprenant((result, error) => {
-    if (!error) {
-      console.log(result);
-      res.send(result);
-    } else {
-      res.status(500).send(error);
-    }
-  });
-});
-
-app.get("/apprenant/:mail", (req, res) => {
-  let mail = req.params.mail;
-  mysqlUtilities.getApprenantByMail((result, error) => {
-    if (!error) {
-      console.log(result);
-      res.send(result);
-    } else {
-      res.status(500).send(error);
-    }
-  }, mail);
-});
-
-app.get("/enseignant", (req, res) => {
-  mysqlUtilities.getEnseignant((result, error) => {
-    if (!error) {
-      console.log(result);
-      res.send(result);
-    } else {
-      res.status(500).send(error);
-    }
-  });
-});
-
-app.get("/enseignant/:mail", (req, res) => {
-  let mail = req.params.mail;
-  mysqlUtilities.getEnseignantByMail((result, error) => {
-    if (!error) {
-      console.log(result);
-      res.send(result);
-    } else {
-      res.status(500).send(error);
-    }
-  }, mail);
 });
 
 app.delete("/admin/apprenant/:mail", (req, res) => {

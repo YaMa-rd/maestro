@@ -7,34 +7,6 @@ const config = {
 };
 
 class MysqlUtilities {
-  postApprenant(callback, user) {
-    let connection = mysql.createConnection(config);
-    connection.connect();
-    connection.query(
-      `INSERT INTO apprenant (nom, motdepasse, image, mail, age, genre) VALUES (?,?,?,?,?,?)`,
-      [user.nom, user.motdepasse, user.image, user.mail, user.age, user.genre],
-      (error, results) => {
-        console.log("test");
-        callback(results, error);
-      }
-    );
-    connection.end();
-  }
-
-  postEnseignant(callback, user) {
-    let connection = mysql.createConnection(config);
-    connection.connect();
-    connection.query(
-      `INSERT INTO enseignant (nom, motdepasse, image, mail, age, genre) VALUES (?,?,?,?,?,?)`,
-      [user.nom, user.motdepasse, user.image, user.mail, user.age, user.genre],
-      (error, results) => {
-        console.log("test");
-        callback(results, error);
-      }
-    );
-    connection.end();
-  }
-
   getAdmin(callback) {
     //on definit la connexion
     let connection = mysql.createConnection(config);
@@ -122,6 +94,34 @@ class MysqlUtilities {
       }
     );
     // on ferme la connexion
+    connection.end();
+  }
+
+  postApprenant(callback, user) {
+    let connection = mysql.createConnection(config);
+    connection.connect();
+    connection.query(
+      `INSERT INTO apprenant (nom, motdepasse, image, mail, age, genre) VALUES (?,?,?,?,?,?)`,
+      [user.nom, user.motdepasse, user.image, user.mail, user.age, user.genre],
+      (error, results) => {
+        console.log("test");
+        callback(results, error);
+      }
+    );
+    connection.end();
+  }
+
+  postEnseignant(callback, user) {
+    let connection = mysql.createConnection(config);
+    connection.connect();
+    connection.query(
+      `INSERT INTO enseignant (nom, motdepasse, image, mail, age, genre) VALUES (?,?,?,?,?,?)`,
+      [user.nom, user.motdepasse, user.image, user.mail, user.age, user.genre],
+      (error, results) => {
+        console.log("test");
+        callback(results, error);
+      }
+    );
     connection.end();
   }
 
