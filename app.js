@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mysqlUtilities = require("./utilities/MysqlUtilities");
-const admin = require("./beans/Admin");
+// const admin = require("./beans/Admin");
 const apprenant = require("./beans/Apprenant");
 const enseignant = require("./beans/Enseignant");
 const app = express();
