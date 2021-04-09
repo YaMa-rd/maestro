@@ -1,6 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mysqlUtilities = require("./utilities/MysqlUtilities");
+const admin = require("./beans/Admin");
+const apprenant = require("./beans/Apprenant");
+const enseignant = require("./beans/Enseignant");
 const app = express();
 const port = 3005;
 
@@ -23,6 +26,15 @@ app.get("/admin", (req, res) => {
 });
 
 app.post("/apprenant", (req, res) => {
+  let user = new apprenant(
+    req.body.nom,
+    req.body.motdepasse,
+    req.body.motdepasse,
+    req.body.image,
+    req.body.mail,
+    req.body.age,
+    req.body.genre
+  );
   mysqlUtilities.postApprenant((result, error) => {
     if (!error) {
       console.log(result);
