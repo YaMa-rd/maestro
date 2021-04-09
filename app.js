@@ -44,30 +44,39 @@ app.post("/apprenant", (req, res) => {
     }
   });
 });
-
-//get enseignant mail
-//get enseignant nom
-//get enseignant motdepasse
-//get enseignant partition
-//post enseignant mail
-//post enseignant motdepasse
-//post enseignant nom
-//post enseignant partition
-//post enseignant partition
-//delete enseignant partition
-
-//get apprenant mail
-//get apprenant motdepasse
-//get apprenant nom
-//post apprenant mail
-//post apprenant motdepasse
-//post apprenant nom
-
-//delete admin mail
-//delete admin motdepasse
-//delete admin nom
+// afficher admin par mail //
+app.get("/admin/mail",(req,res)=>
+{
+  mysqlUtilities.getAdminByMail( (result, error) => 
+  {
+    if (!error) 
+    {
+      console.log(result);
+      res.send(result);
+    } 
+    else 
+    {
+      res.status(500).send(error);
+    }
+  },mail)
+});
+//----------afficher apprenant-------------//
+app.get("/apprenant",(req,res)=>
+{
+  mysqlUtilities.getApprenant((result, error) => {
+    if (!error) 
+    {
+      console.log(result);
+      res.send(result);
+    } else 
+    {
+      res.status(500).send(error);
+    }
+  });
+});
 
 app.listen(port, () => {
+<<<<<<< Updated upstream
   console.log(`Example app listening at http://localhost:${port}`);
 });
 
@@ -80,3 +89,7 @@ app.listen(port, () => {
 //   "genre" : "homme",
 
 // }
+=======
+  console.log(`Example app listening at http://localhost:${port}`)
+})
+>>>>>>> Stashed changes

@@ -2,7 +2,7 @@ const mysql = require("mysql");
 const config = {
   host: "localhost",
   user: "root",
-  password: "root",
+  password: "",
   database: "maestro",
 };
 
@@ -21,6 +21,7 @@ class MysqlUtilities {
     // on ferme la connexion
     connection.end();
   }
+<<<<<<< Updated upstream
 
   postApprenant(callback, user) {
     let connection = mysql.createConnection(config);
@@ -37,5 +38,37 @@ class MysqlUtilities {
     connection.end();
   }
 }
+=======
+  //// -----------admin/mail-------------/////
+  getAdminByMail(callback){
+    let connection = mysql.createConnection(config);
+    //on lance la connexion
+    connection.connect();
+    //on envoie la query
+    connection.query(`SELECT mail FROM admin`,[mail] ,(error, results) => {
+      console.log("test");
+      callback(results, error);
+      res.send(results);
+    });
+    // on ferme la connexion
+    connection.end();
+  };
+  ////-----------apprenant---------------////
+  getApprenant(callback){
+    let connection = mysql.createConnection(config);
+    //on lance la connexion
+    connection.connect();
+    //on envoie la query
+    connection.query(`SELECT*FROM apprenant`, (error, results) => {
+      console.log("test");
+      callback(results, error);
+      res.send(results);
+    });
+    // on ferme la connexion
+    connection.end();
+  };
+  
+};
+>>>>>>> Stashed changes
 
 module.exports = new MysqlUtilities();
