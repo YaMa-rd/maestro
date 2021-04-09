@@ -25,10 +25,11 @@ app.get("/admin", (req, res) => {
   });
 });
 
+//*ajoute un apprenant
+
 app.post("/apprenant", (req, res) => {
   let user = new apprenant(
     req.body.nom,
-    req.body.motdepasse,
     req.body.motdepasse,
     req.body.image,
     req.body.mail,
@@ -38,11 +39,74 @@ app.post("/apprenant", (req, res) => {
   mysqlUtilities.postApprenant((result, error) => {
     if (!error) {
       console.log(result);
-      res.send(result);
+      res.send(user);
     } else {
       res.status(500).send(error);
     }
-  });
+  }, user);
+});
+
+//*ajoute un apprenant depuis admin
+
+app.post("/admin/apprenant", (req, res) => {
+  let user = new apprenant(
+    req.body.nom,
+    req.body.motdepasse,
+    req.body.image,
+    req.body.mail,
+    req.body.age,
+    req.body.genre
+  );
+  mysqlUtilities.postApprenant((result, error) => {
+    if (!error) {
+      console.log(result);
+      res.send(user);
+    } else {
+      res.status(500).send(error);
+    }
+  }, user);
+});
+
+//* ajoute un enseignant
+
+app.post("/apprenant", (req, res) => {
+  let user = new enseignant(
+    req.body.nom,
+    req.body.motdepasse,
+    req.body.image,
+    req.body.mail,
+    req.body.age,
+    req.body.genre
+  );
+  mysqlUtilities.postEnseignant((result, error) => {
+    if (!error) {
+      console.log(result);
+      res.send(user);
+    } else {
+      res.status(500).send(error);
+    }
+  }, user);
+});
+
+//*ajoute un enseignant depuis admin
+
+app.post("/admin/enseignant", (req, res) => {
+  let user = new enseignant(
+    req.body.nom,
+    req.body.motdepasse,
+    req.body.image,
+    req.body.mail,
+    req.body.age,
+    req.body.genre
+  );
+  mysqlUtilities.postEnseignant((result, error) => {
+    if (!error) {
+      console.log(result);
+      res.send(user);
+    } else {
+      res.status(500).send(error);
+    }
+  }, user);
 });
 // afficher admin par mail //
 app.get("/admin/:mail",(req,res)=>
@@ -120,6 +184,7 @@ app.get("/enseignant/:mail",(req,res)=>
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
+<<<<<<< HEAD
 
 // {
 //   "nom" : "robert",
@@ -131,3 +196,5 @@ app.listen(port, () => {
 
 // }
 //----------afficher apprenant/mail-------------//
+=======
+>>>>>>> 4af25d623a065f80f19578cac4cd86329bd2a56e
