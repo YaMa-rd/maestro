@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 09, 2021 at 08:54 AM
+-- Generation Time: Apr 09, 2021 at 09:02 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -32,14 +32,14 @@ CREATE TABLE `admin` (
   `id` int(50) NOT NULL,
   `nom` varchar(50) NOT NULL,
   `motdepasse` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL
+  `mail` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `nom`, `motdepasse`, `email`) VALUES
+INSERT INTO `admin` (`id`, `nom`, `motdepasse`, `mail`) VALUES
 (1, 'admin', 'admin', '');
 
 -- --------------------------------------------------------
