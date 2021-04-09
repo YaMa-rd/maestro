@@ -2,7 +2,7 @@ const mysql = require("mysql");
 const config = {
   host: "localhost",
   user: "root",
-  password: "",
+  password: "root",
   database: "maestro",
 };
 
@@ -30,8 +30,6 @@ class MysqlUtilities {
       (error, results) => {
         console.log("test");
         callback(results, error);
-<<<<<<< HEAD
-=======
       }
     );
     connection.end();
@@ -46,28 +44,30 @@ class MysqlUtilities {
       (error, results) => {
         console.log("test");
         callback(results, error);
->>>>>>> 4af25d623a065f80f19578cac4cd86329bd2a56e
       }
     );
     connection.end();
   }
 
   //// -----------admin/mail-------------/////
-  getAdminByMail(callback,mail){
+  getAdminByMail(callback, mail) {
     let connection = mysql.createConnection(config);
     //on lance la connexion
     connection.connect();
     //on envoie la query
-    connection.query(`SELECT * FROM admin WHERE mail=(?) `,[mail] ,(error, results) => {
-      console.log("test");
-      callback(results, error);
-    });
+    connection.query(
+      `SELECT * FROM admin WHERE mail=(?) `,
+      [mail],
+      (error, results) => {
+        console.log("test");
+        callback(results, error);
+      }
+    );
     // on ferme la connexion
     connection.end();
-  };
+  }
   ////-----------apprenant---------------////
-  getApprenant(callback){
-  
+  getApprenant(callback) {
     let connection = mysql.createConnection(config);
     //on lance la connexion
     connection.connect();
@@ -78,19 +78,23 @@ class MysqlUtilities {
     });
     // on ferme la connexion
     connection.end();
-  };
-  getApprenantByMail(callback,mail){
+  }
+  getApprenantByMail(callback, mail) {
     let connection = mysql.createConnection(config);
     //on lance la connexion
     connection.connect();
     //on envoie la query
-    connection.query(`SELECT * FROM apprenant WHERE mail=(?) `,[mail] ,(error, results) => {
-      console.log("test");
-      callback(results, error);
-    });
+    connection.query(
+      `SELECT * FROM apprenant WHERE mail=(?) `,
+      [mail],
+      (error, results) => {
+        console.log("test");
+        callback(results, error);
+      }
+    );
     // on ferme la connexion
     connection.end();
-  };
+  }
   getEnseignant(callback) {
     //on definit la connexion
     let connection = mysql.createConnection(config);
@@ -104,19 +108,22 @@ class MysqlUtilities {
     // on ferme la connexion
     connection.end();
   }
-  getEnseignantByMail(callback,mail){
+  getEnseignantByMail(callback, mail) {
     let connection = mysql.createConnection(config);
     //on lance la connexion
     connection.connect();
     //on envoie la query
-    connection.query(`SELECT * FROM enseignant WHERE mail=(?) `,[mail] ,(error, results) => {
-      console.log("test");
-      callback(results, error);
-    });
+    connection.query(
+      `SELECT * FROM enseignant WHERE mail=(?) `,
+      [mail],
+      (error, results) => {
+        console.log("test");
+        callback(results, error);
+      }
+    );
     // on ferme la connexion
     connection.end();
-  };
-
-};
+  }
+}
 
 module.exports = new MysqlUtilities();

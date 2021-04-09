@@ -109,92 +109,60 @@ app.post("/admin/enseignant", (req, res) => {
   }, user);
 });
 // afficher admin par mail //
-app.get("/admin/:mail",(req,res)=>
-{
-  let mail =req.params.mail;
-  mysqlUtilities.getAdminByMail( (result, error) => {
-    if (!error) 
-    {
+app.get("/admin/:mail", (req, res) => {
+  let mail = req.params.mail;
+  mysqlUtilities.getAdminByMail((result, error) => {
+    if (!error) {
       console.log(result);
       res.send(result);
-    } 
-    else 
-    {
+    } else {
       res.status(500).send(error);
     }
-  },mail)
+  }, mail);
 });
 //----------afficher apprenant-------------//
-app.get("/apprenant",(req,res)=>
-{
+app.get("/apprenant", (req, res) => {
   mysqlUtilities.getApprenant((result, error) => {
-    if (!error) 
-    {
+    if (!error) {
       console.log(result);
       res.send(result);
-    } else 
-    {
+    } else {
       res.status(500).send(error);
     }
   });
 });
-app.get("/apprenant/:mail",(req,res)=>
-{
-  let mail =req.params.mail;
-  mysqlUtilities.getApprenantByMail( (result, error) => {
-    if (!error) 
-    {
+app.get("/apprenant/:mail", (req, res) => {
+  let mail = req.params.mail;
+  mysqlUtilities.getApprenantByMail((result, error) => {
+    if (!error) {
       console.log(result);
       res.send(result);
-    } 
-    else 
-    {
+    } else {
       res.status(500).send(error);
     }
-  },mail)
+  }, mail);
 });
-app.get("/enseignant",(req,res)=>
-{
+app.get("/enseignant", (req, res) => {
   mysqlUtilities.getEnseignant((result, error) => {
-    if (!error) 
-    {
+    if (!error) {
       console.log(result);
       res.send(result);
-    } else 
-    {
+    } else {
       res.status(500).send(error);
     }
   });
 });
-app.get("/enseignant/:mail",(req,res)=>
-{
-  let mail =req.params.mail;
-  mysqlUtilities.getEnseignantByMail( (result, error) => {
-    if (!error) 
-    {
+app.get("/enseignant/:mail", (req, res) => {
+  let mail = req.params.mail;
+  mysqlUtilities.getEnseignantByMail((result, error) => {
+    if (!error) {
       console.log(result);
       res.send(result);
-    } 
-    else 
-    {
+    } else {
       res.status(500).send(error);
     }
-  },mail)
+  }, mail);
 });
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
-<<<<<<< HEAD
-
-// {
-//   "nom" : "robert",
-//   "motdepasse" : 123456,
-//   "image" : "",
-//   "mail" : "robert@maestro.com",
-//   "age" : "48",
-//   "genre" : "homme",
-
-// }
-//----------afficher apprenant/mail-------------//
-=======
->>>>>>> 4af25d623a065f80f19578cac4cd86329bd2a56e
