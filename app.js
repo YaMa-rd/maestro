@@ -21,6 +21,28 @@ app.get("/admin", (req, res) => {
   });
 });
 
+//get enseignant mail
+//get enseignant nom
+//get enseignant partition
+//get enseignant partition
+//post enseignant mail
+//post enseignant motdepasse
+//post enseignant nom
+//post enseignant partition
+//post enseignant partition
+//delete enseignant partition
+
+//get apprenant mail
+//get apprenant motdepasse
+//get apprenant nom
+//post apprenant mail
+//post apprenant motdepasse
+//post apprenant nom
+
+//delete admin mail
+//delete admin motdepasse
+//delete admin nom
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
