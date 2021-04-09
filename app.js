@@ -129,7 +129,7 @@ app.post("/admin/apprenant", (req, res) => {
 
 //* ajoute un enseignant
 
-app.post("/apprenant", (req, res) => {
+app.post("/enseignant", (req, res) => {
   let user = new enseignant(
     req.body.nom,
     req.body.motdepasse,
