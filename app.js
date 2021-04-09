@@ -24,7 +24,7 @@ app.get("/admin", (req, res) => {
 
 //get enseignant mail
 //get enseignant nom
-//get enseignant partition
+//get enseignant motdepasse
 //get enseignant partition
 //post enseignant mail
 //post enseignant motdepasse
