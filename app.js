@@ -29,7 +29,6 @@ app.post("/apprenant", (req, res) => {
   let user = new apprenant(
     req.body.nom,
     req.body.motdepasse,
-    req.body.motdepasse,
     req.body.image,
     req.body.mail,
     req.body.age,
@@ -38,11 +37,11 @@ app.post("/apprenant", (req, res) => {
   mysqlUtilities.postApprenant((result, error) => {
     if (!error) {
       console.log(result);
-      res.send(result);
+      res.send(user);
     } else {
       res.status(500).send(error);
     }
-  });
+  }, user);
 });
 
 //get enseignant mail
