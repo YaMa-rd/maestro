@@ -124,6 +124,34 @@ class MysqlUtilities {
     // on ferme la connexion
     connection.end();
   }
+
+  deleteApprenant(callback, params) {
+    let connection = mysql.createConnection(config);
+    connection.connect();
+    connection.query(
+      "DELETE FROM apprenant WHERE mail = (?)",
+      [params],
+      (error, results) => {
+        console.log("je t'efface");
+        callback(results, error);
+      }
+    );
+    connection.end();
+  }
+
+  deleteEnseignant(callback, params) {
+    let connection = mysql.createConnection(config);
+    connection.connect();
+    connection.query(
+      "DELETE FROM enseignant WHERE mail = (?)",
+      [params],
+      (error, results) => {
+        console.log("je t'efface");
+        callback(results, error);
+      }
+    );
+    connection.end();
+  }
 }
 
 module.exports = new MysqlUtilities();

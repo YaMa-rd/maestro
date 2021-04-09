@@ -121,6 +121,7 @@ app.get("/admin/:mail", (req, res) => {
     }
   }, mail);
 });
+
 //----------afficher apprenant-------------//
 app.get("/apprenant", (req, res) => {
   mysqlUtilities.getApprenant((result, error) => {
@@ -132,6 +133,7 @@ app.get("/apprenant", (req, res) => {
     }
   });
 });
+
 app.get("/apprenant/:mail", (req, res) => {
   let mail = req.params.mail;
   mysqlUtilities.getApprenantByMail((result, error) => {
@@ -143,6 +145,7 @@ app.get("/apprenant/:mail", (req, res) => {
     }
   }, mail);
 });
+
 app.get("/enseignant", (req, res) => {
   mysqlUtilities.getEnseignant((result, error) => {
     if (!error) {
@@ -153,6 +156,7 @@ app.get("/enseignant", (req, res) => {
     }
   });
 });
+
 app.get("/enseignant/:mail", (req, res) => {
   let mail = req.params.mail;
   mysqlUtilities.getEnseignantByMail((result, error) => {
@@ -164,6 +168,31 @@ app.get("/enseignant/:mail", (req, res) => {
     }
   }, mail);
 });
+
+app.delete("/admin/apprenant/:mail", (req, res) => {
+  let mailDelete = req.params.mail;
+  console.log(mailDelete);
+  mysqlUtilities.deleteApprenant((result, error) => {
+    if (!error) {
+      res.send(result);
+    } else {
+      res.status(500).send(error);
+    }
+  }, mailDelete);
+});
+
+app.delete("/admin/enseignant/:mail", (req, res) => {
+  let mailDelete = req.params.mail;
+  console.log(mailDelete);
+  mysqlUtilities.deleteEnseignant((result, error) => {
+    if (!error) {
+      res.send(result);
+    } else {
+      res.status(500).send(error);
+    }
+  }, mailDelete);
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
