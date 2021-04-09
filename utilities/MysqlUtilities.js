@@ -21,7 +21,6 @@ class MysqlUtilities {
     // on ferme la connexion
     connection.end();
   }
-<<<<<<< Updated upstream
 
   postApprenant(callback, user) {
     let connection = mysql.createConnection(config);
@@ -38,7 +37,6 @@ class MysqlUtilities {
     connection.end();
   }
 }
-=======
   //// -----------admin/mail-------------/////
   getAdminByMail(callback){
     let connection = mysql.createConnection(config);
@@ -69,6 +67,5 @@ class MysqlUtilities {
   };
   
 };
->>>>>>> Stashed changes
 
 module.exports = new MysqlUtilities();

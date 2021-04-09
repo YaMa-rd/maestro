@@ -76,7 +76,6 @@ app.get("/apprenant",(req,res)=>
 });
 
 app.listen(port, () => {
-<<<<<<< Updated upstream
   console.log(`Example app listening at http://localhost:${port}`);
 });
 
@@ -89,7 +88,3 @@ app.listen(port, () => {
 //   "genre" : "homme",
 
 // }
-=======
-  console.log(`Example app listening at http://localhost:${port}`)
-})
->>>>>>> Stashed changes
