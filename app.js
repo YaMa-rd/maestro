@@ -10,6 +10,7 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
+//*partie admin
 app.get("/admin", (req, res) => {
   mysqlUtilities.getAdmin((result, error) => {
     if (!error) {

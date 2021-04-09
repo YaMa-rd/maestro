@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 09, 2021 at 08:06 AM
+-- Generation Time: Apr 09, 2021 at 08:40 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -70,7 +70,8 @@ CREATE TABLE `enseignant` (
   `image` varchar(50) DEFAULT 'NULL',
   `mail` varchar(50) NOT NULL,
   `age` int(50) DEFAULT NULL,
-  `genre` varchar(50) DEFAULT NULL
+  `genre` varchar(50) DEFAULT NULL,
+  `partitions` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
