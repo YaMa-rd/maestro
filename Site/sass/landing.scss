@@ -8,22 +8,21 @@ $black: black;
     $gris: #486475;
 
 #video {
-    position: fixed;
-    top: 50%;
-    left: 50%;
+    position: relative;
     min-width: 100%;
-    min-height: 80%;
+    min-height: 100%;
     width: 100%;
-    height: 80%;
     z-index: -100;
-    transform: translateX(-50%) translateY(-50%);
     background-size: cover;
     transition: 0s opacity;
+}
+.bg-video{
+    background-color: #010210;
 }
       
 
 /* CSS DES BOUTONS */
- button{
+ .btn{
     border-radius: 10px;
     border-color: $or;
     position: absolute;
@@ -41,9 +40,14 @@ $black: black;
 }*/
 
 #section1{
+    background-color: $violet;
     background-image: url("../photos/bg_portée.svg");
+    
+    background-repeat: no-repeat;
+    
 }
 
-.description{
-    word-break: break-all;
+.icones{
+    width: 150px;
+    overflow: hidden;
 }

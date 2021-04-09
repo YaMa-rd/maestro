@@ -1,20 +1,22 @@
+@charset "UTF-8";
 @import "../css/landing.css";
 /* CHARTRE GRAPHIQUE */
-/* CSS DES BOUTONS */
-/*button{
-    border-radius: 20px;
-    border-color: $or;
-    /*position: absolute;
-    background-color: $violet;
-    color: $or;
-    width: 200px;
-    height: 50px;
-}*/
-video {
+#video {
   position: relative;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  z-index: -100;
+  background-size: cover;
+  transition: 0s opacity;
 }
 
-a {
+.bg-video {
+  background-color: #010210;
+}
+
+/* CSS DES BOUTONS */
+.btn {
   border-radius: 10px;
   border-color: #CBB260;
   position: absolute;
@@ -25,4 +27,18 @@ a {
   right: 0;
   padding: 5px;
   opacity: 0;
+}
+
+/*video{
+    position: relative;
+}*/
+#section1 {
+  background-color: #6B103C;
+  background-image: url("../photos/bg_portée.svg");
+  background-repeat: no-repeat;
+}
+
+.icones {
+  width: 150px;
+  overflow: hidden;
 }
