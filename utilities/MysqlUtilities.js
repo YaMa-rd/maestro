@@ -7,20 +7,6 @@ const config = {
 };
 
 class MysqlUtilities {
-  getAdmin(callback) {
-    //on definit la connexion
-    let connection = mysql.createConnection(config);
-    //on lance la connexion
-    connection.connect();
-    //on envoie la query
-    connection.query(`SELECT * FROM admin`, (error, results) => {
-      console.log("test");
-      callback(results, error);
-    });
-    // on ferme la connexion
-    connection.end();
-  }
-
   postApprenant(callback, user) {
     let connection = mysql.createConnection(config);
     connection.connect();
@@ -46,6 +32,20 @@ class MysqlUtilities {
         callback(results, error);
       }
     );
+    connection.end();
+  }
+
+  getAdmin(callback) {
+    //on definit la connexion
+    let connection = mysql.createConnection(config);
+    //on lance la connexion
+    connection.connect();
+    //on envoie la query
+    connection.query(`SELECT * FROM admin`, (error, results) => {
+      console.log("test");
+      callback(results, error);
+    });
+    // on ferme la connexion
     connection.end();
   }
 

@@ -13,18 +13,6 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
-//*partie admin
-app.get("/admin", (req, res) => {
-  mysqlUtilities.getAdmin((result, error) => {
-    if (!error) {
-      console.log(result);
-      res.send(result);
-    } else {
-      res.status(500).send(error);
-    }
-  });
-});
-
 //*ajoute un apprenant
 
 app.post("/apprenant", (req, res) => {
@@ -108,6 +96,19 @@ app.post("/admin/enseignant", (req, res) => {
     }
   }, user);
 });
+
+//*partie admin
+app.get("/admin", (req, res) => {
+  mysqlUtilities.getAdmin((result, error) => {
+    if (!error) {
+      console.log(result);
+      res.send(result);
+    } else {
+      res.status(500).send(error);
+    }
+  });
+});
+
 // afficher admin par mail //
 app.get("/admin/:mail", (req, res) => {
   let mail = req.params.mail;
