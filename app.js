@@ -45,10 +45,10 @@ app.post("/apprenant", (req, res) => {
   });
 });
 // afficher admin par mail //
-app.get("/admin/mail",(req,res)=>
+app.get("/admin/:mail",(req,res)=>
 {
-  mysqlUtilities.getAdminByMail( (result, error) => 
-  {
+  let mail =req.params.mail;
+  mysqlUtilities.getAdminByMail( (result, error) => {
     if (!error) 
     {
       console.log(result);
@@ -74,7 +74,49 @@ app.get("/apprenant",(req,res)=>
     }
   });
 });
-
+app.get("/apprenant/:mail",(req,res)=>
+{
+  let mail =req.params.mail;
+  mysqlUtilities.getApprenantByMail( (result, error) => {
+    if (!error) 
+    {
+      console.log(result);
+      res.send(result);
+    } 
+    else 
+    {
+      res.status(500).send(error);
+    }
+  },mail)
+});
+app.get("/enseignant",(req,res)=>
+{
+  mysqlUtilities.getEnseignant((result, error) => {
+    if (!error) 
+    {
+      console.log(result);
+      res.send(result);
+    } else 
+    {
+      res.status(500).send(error);
+    }
+  });
+});
+app.get("/enseignant/:mail",(req,res)=>
+{
+  let mail =req.params.mail;
+  mysqlUtilities.getEnseignantByMail( (result, error) => {
+    if (!error) 
+    {
+      console.log(result);
+      res.send(result);
+    } 
+    else 
+    {
+      res.status(500).send(error);
+    }
+  },mail)
+});
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
@@ -88,3 +130,4 @@ app.listen(port, () => {
 //   "genre" : "homme",
 
 // }
+//----------afficher apprenant/mail-------------//

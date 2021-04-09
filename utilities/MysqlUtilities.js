@@ -16,7 +16,6 @@ class MysqlUtilities {
     connection.query(`SELECT * FROM admin`, (error, results) => {
       console.log("test");
       callback(results, error);
-      res.send(results);
     });
     // on ferme la connexion
     connection.end();
@@ -31,28 +30,27 @@ class MysqlUtilities {
       (error, results) => {
         console.log("test");
         callback(results, error);
-        res.send(results);
       }
     );
     connection.end();
   }
-}
+
   //// -----------admin/mail-------------/////
-  getAdminByMail(callback){
+  getAdminByMail(callback,mail){
     let connection = mysql.createConnection(config);
     //on lance la connexion
     connection.connect();
     //on envoie la query
-    connection.query(`SELECT mail FROM admin`,[mail] ,(error, results) => {
+    connection.query(`SELECT * FROM admin WHERE mail=(?) `,[mail] ,(error, results) => {
       console.log("test");
       callback(results, error);
-      res.send(results);
     });
     // on ferme la connexion
     connection.end();
   };
   ////-----------apprenant---------------////
   getApprenant(callback){
+  
     let connection = mysql.createConnection(config);
     //on lance la connexion
     connection.connect();
@@ -60,12 +58,48 @@ class MysqlUtilities {
     connection.query(`SELECT*FROM apprenant`, (error, results) => {
       console.log("test");
       callback(results, error);
-      res.send(results);
     });
     // on ferme la connexion
     connection.end();
   };
-  
+  getApprenantByMail(callback,mail){
+    let connection = mysql.createConnection(config);
+    //on lance la connexion
+    connection.connect();
+    //on envoie la query
+    connection.query(`SELECT * FROM apprenant WHERE mail=(?) `,[mail] ,(error, results) => {
+      console.log("test");
+      callback(results, error);
+    });
+    // on ferme la connexion
+    connection.end();
+  };
+  getEnseignant(callback) {
+    //on definit la connexion
+    let connection = mysql.createConnection(config);
+    //on lance la connexion
+    connection.connect();
+    //on envoie la query
+    connection.query(`SELECT * FROM enseignant`, (error, results) => {
+      console.log("test");
+      callback(results, error);
+    });
+    // on ferme la connexion
+    connection.end();
+  }
+  getEnseignantByMail(callback,mail){
+    let connection = mysql.createConnection(config);
+    //on lance la connexion
+    connection.connect();
+    //on envoie la query
+    connection.query(`SELECT * FROM enseignant WHERE mail=(?) `,[mail] ,(error, results) => {
+      console.log("test");
+      callback(results, error);
+    });
+    // on ferme la connexion
+    connection.end();
+  };
+
 };
 
 module.exports = new MysqlUtilities();
