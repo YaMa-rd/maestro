@@ -22,8 +22,8 @@ app.get("/admin", (req, res) => {
   });
 });
 
-app.post("/admin", (req, res) => {
-  mysqlUtilities.postAdmin((result, error) => {
+app.post("/apprenant", (req, res) => {
+  mysqlUtilities.postApprenant((result, error) => {
     if (!error) {
       console.log(result);
       res.send(result);
@@ -58,3 +58,13 @@ app.post("/admin", (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
+
+// {
+//   "nom" : "robert",
+//   "motdepasse" : 123456,
+//   "image" : "",
+//   "mail" : "robert@maestro.com",
+//   "age" : "48",
+//   "genre" : "homme",
+
+// }

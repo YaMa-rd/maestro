@@ -22,14 +22,18 @@ class MysqlUtilities {
     connection.end();
   }
 
-  postApprenant(callback) {
+  postApprenant(callback, user) {
     let connection = mysql.createConnection(config);
     connection.connect();
-    connection.query(`INSERT INTO apprenant`, (error, results) => {
-      console.log("test");
-      callback(results, error);
-      res.send(results);
-    });
+    connection.query(
+      `INSERT INTO apprenant (nom, motdepasse, image, mail, age, genre) VALUES (?,?,?,?,?,?)`,
+      [user.nom, user.motdepasse, user.image, user.mail, user.age, user.genre],
+      (error, results) => {
+        console.log("test");
+        callback(results, error);
+        res.send(results);
+      }
+    );
     connection.end();
   }
 }
