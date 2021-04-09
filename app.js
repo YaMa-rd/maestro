@@ -22,6 +22,17 @@ app.get("/admin", (req, res) => {
   });
 });
 
+app.post("/admin", (req, res) => {
+  mysqlUtilities.postAdmin((result, error) => {
+    if (!error) {
+      console.log(result);
+      res.send(result);
+    } else {
+      res.status(500).send(error);
+    }
+  });
+});
+
 //get enseignant mail
 //get enseignant nom
 //get enseignant motdepasse
