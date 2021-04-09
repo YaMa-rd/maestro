@@ -25,6 +25,8 @@ app.get("/admin", (req, res) => {
   });
 });
 
+//*ajoute un apprenant
+
 app.post("/apprenant", (req, res) => {
   let user = new apprenant(
     req.body.nom,
@@ -35,6 +37,69 @@ app.post("/apprenant", (req, res) => {
     req.body.genre
   );
   mysqlUtilities.postApprenant((result, error) => {
+    if (!error) {
+      console.log(result);
+      res.send(user);
+    } else {
+      res.status(500).send(error);
+    }
+  }, user);
+});
+
+//*ajoute un apprenant depuis admin
+
+app.post("/admin/apprenant", (req, res) => {
+  let user = new apprenant(
+    req.body.nom,
+    req.body.motdepasse,
+    req.body.image,
+    req.body.mail,
+    req.body.age,
+    req.body.genre
+  );
+  mysqlUtilities.postApprenant((result, error) => {
+    if (!error) {
+      console.log(result);
+      res.send(user);
+    } else {
+      res.status(500).send(error);
+    }
+  }, user);
+});
+
+//* ajoute un enseignant
+
+app.post("/apprenant", (req, res) => {
+  let user = new enseignant(
+    req.body.nom,
+    req.body.motdepasse,
+    req.body.image,
+    req.body.mail,
+    req.body.age,
+    req.body.genre
+  );
+  mysqlUtilities.postEnseignant((result, error) => {
+    if (!error) {
+      console.log(result);
+      res.send(user);
+    } else {
+      res.status(500).send(error);
+    }
+  }, user);
+});
+
+//*ajoute un enseignant depuis admin
+
+app.post("/admin/enseignant", (req, res) => {
+  let user = new enseignant(
+    req.body.nom,
+    req.body.motdepasse,
+    req.body.image,
+    req.body.mail,
+    req.body.age,
+    req.body.genre
+  );
+  mysqlUtilities.postEnseignant((result, error) => {
     if (!error) {
       console.log(result);
       res.send(user);
@@ -69,13 +134,3 @@ app.post("/apprenant", (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
-
-// {
-//   "nom" : "robert",
-//   "motdepasse" : 123456,
-//   "image" : "",
-//   "mail" : "robert@maestro.com",
-//   "age" : "48",
-//   "genre" : "homme",
-
-// }
