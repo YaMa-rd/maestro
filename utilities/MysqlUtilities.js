@@ -21,6 +21,17 @@ class MysqlUtilities {
     // on ferme la connexion
     connection.end();
   }
+
+  postApprenant(callback) {
+    let connection = mysql.createConnection(config);
+    connection.connect();
+    connection.query(`INSERT INTO apprenant`, (error, results) => {
+      console.log("test");
+      callback(results, error);
+      res.send(results);
+    });
+    connection.end();
+  }
 }
 
 module.exports = new MysqlUtilities();
