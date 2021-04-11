@@ -41,6 +41,7 @@
                     ?>
                 </div>
                 <?php
+                $_SESSION['nom'] = $data['nom'];
             }
             echo "Bienvenue parmi nous, " . $_POST['nom'] . " !";
             $response->closeCursor();
@@ -74,6 +75,7 @@
                     ?>
                 </div>
                 <?php
+                $_SESSION['nom'] = $data['nom'];
             }
             echo "Bienvenue parmi nous, " . $_POST['nom'] . " !";
             $response->closeCursor();

@@ -34,8 +34,9 @@
                 </div>
                 <?php
                 $_SESSION['nom'] = $data['nom'];
+                echo "Bienvenue à toi, " . $_SESSION['nom'] . " !";
             }
-            echo "Bienvenue à toi, " . $_SESSION['nom'] . " !";
+            echo "User doesn't exist or password is not correct";
             $response->closeCursor();
         
         }
@@ -61,7 +62,6 @@
                 <?php
                 $_SESSION['nom'] = $data['nom'];
             }
-            // print_r($response);
             echo "Bienvenue à toi, " . $_SESSION['nom'] . " !";
             $response->closeCursor();
 
