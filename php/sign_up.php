@@ -10,7 +10,7 @@
 <body>
 
     <section class="form">
-
+        <!-- Formulaire d'inscription -->
         <h1>Sign up</h1>
         <form action="sql_add.php" method="post">
             <div>

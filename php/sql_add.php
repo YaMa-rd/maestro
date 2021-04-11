@@ -13,7 +13,7 @@
         // Voir le fichier PDO pour paramétrer l'accès à la base données
         include('./includes/pdo/pdo.php');
 
-        
+       // Créer dans la base de données "apprenant" 
         if ($_POST['role'] == 'apprenant') {
             
             $response = $database->prepare('INSERT INTO apprenant (nom, motdepasse, mail) VALUES (:nom, :motdepasse, :mail)');
@@ -48,6 +48,7 @@
         
         }
 
+       // Créer dans la base de données "enseignant" 
         if ($_POST['role'] == 'enseignant') {
 
             $response = $database->prepare('INSERT INTO enseignant (nom, motdepasse, mail) VALUES (:nom, :motdepasse, :mail)');

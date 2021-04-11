@@ -4,13 +4,13 @@
 
 <head>
     <link rel="stylesheet" href="/css/form.css">
-    <title>Sign up</title>
+    <title>Log in</title>
 </head>
 
 <body>
 
     <section class="form">
-
+        <!-- Formulaire de connexion -->
         <h1>Log in</h1>
         <form action="sql_connect.php" method="post">
             <div>
