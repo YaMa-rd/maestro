@@ -10,6 +10,7 @@
 
     <?php 
     
+        // Voir le fichier PDO pour paramétrer l'accès à la base données
         include('./includes/pdo/pdo.php');
 
         

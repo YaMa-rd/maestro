@@ -10,6 +10,7 @@
 
     <?php 
     
+        // Voir le fichier PDO pour paramétrer l'accès à la base données
         include('./includes/pdo/pdo.php');
 
         
@@ -45,7 +46,7 @@
             $response->closeCursor();
         
         }
-        
+
         if ($_POST['role'] == 'enseignant') {
 
             $response = $database->prepare('INSERT INTO enseignant (nom, motdepasse, mail) VALUES (:nom, :motdepasse, :mail)');
