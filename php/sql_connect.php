@@ -3,7 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="/css/sql.css">
-    <title>SQL Update</title>
+    <title>SQL connect</title>
 </head>
 
 <body>
@@ -34,9 +34,8 @@
                 </div>
                 <?php
                 $_SESSION['nom'] = $data['nom'];
-                echo "Bienvenue à toi, " . $_SESSION['nom'] . " !";
             }
-            echo "User does not exist or password is not correct";
+            header('Location: sql_connect_render.php');
             $response->closeCursor();
         
         }
@@ -62,9 +61,8 @@
                 </div>
                 <?php
                 $_SESSION['nom'] = $data['nom'];
-                echo "Bienvenue à toi, " . $_SESSION['nom'] . " !";
             }
-            echo "User does not exist or password is not correct";
+            header('Location: sql_connect_render.php');
             $response->closeCursor();
 
         }
