@@ -1,15 +1,14 @@
-const btnConnection = document.querySelector(".btn");
+const btnConnection2 = document.querySelector(".btnfetch");
 
-let _data = {
-  nom: "Professeur lea",
-  motdepasse: 4141515,
-  image: "./test.jpg",
-  mail: "lea@maestro.com",
-  age: "37",
-  genre: "femme",
-};
-
-btnConnection.addEventListener("click", () => {
+btnConnection2.addEventListener("click", () => {
+  let _data = {
+    nom: "Professeur reddington",
+    motdepasse: 1545,
+    image: "",
+    mail: "reddington@maestro.com",
+    age: "52",
+    genre: "homme",
+  };
   fetch("http://localhost:3005/admin/enseignant", {
     method: "POST",
     body: JSON.stringify(_data),
