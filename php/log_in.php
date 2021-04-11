@@ -1,6 +1,6 @@
-<!-- <?php include('./includes/session_start.php');?> -->
-<?php include('./includes/head.php');?>
-<?php include('./includes/connected.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/connected.php');?>
 
 <head>
     <link rel="stylesheet" href="/css/form.css">
@@ -27,7 +27,7 @@
     </section>    
 
     <footer>
-        <?php include('./includes/menu.php');?>
+        <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php');?>
     </footer>
 
 </body>

@@ -1,5 +1,5 @@
-<?php include('./includes/session_start.php');?>
-<?php include('./includes/head.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
 
 <head>
     <link rel="stylesheet" href="/css/sql.css">
@@ -86,7 +86,7 @@
     ?>
 
     <footer>
-        <?php include('./includes/menu.php');?>
+        <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php');?>
     </footer>
 
 </body>
