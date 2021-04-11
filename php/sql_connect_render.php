@@ -12,6 +12,9 @@
         if (isset($_SESSION['nom'])) {
             echo 'Welcome to Maestro, ' . $_SESSION['nom'] . ' !';
         }
+        else if (isset($_SESSION['admin'])) {
+            echo 'Welcome admin !';
+        }
         else {
             echo 'User does not exist or password was not correct';
         }

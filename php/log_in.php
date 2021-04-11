@@ -19,6 +19,7 @@
                 <select name="role" id="role">
                     <option value="apprenant">apprenant</option>
                     <option value="enseignant">enseignant</option>
+                    <option value="admin">admin</option>
                 </select>
                 <input type="submit" value="Send">
             </div>

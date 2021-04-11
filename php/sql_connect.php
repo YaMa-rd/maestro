@@ -34,6 +34,7 @@
                 </div>
                 <?php
                 $_SESSION['nom'] = $data['nom'];
+                $_SESSION['role'] = 'apprenant';
             }
             header('Location: sql_connect_render.php');
             $response->closeCursor();
@@ -61,6 +62,34 @@
                 </div>
                 <?php
                 $_SESSION['nom'] = $data['nom'];
+                $_SESSION['role'] = 'enseignant';
+            }
+            header('Location: sql_connect_render.php');
+            $response->closeCursor();
+            
+        }
+
+        // Connecter l'admin 
+        if ($_POST['role'] == 'admin') {
+ 
+            $response = $database->prepare('SELECT * FROM admin WHERE nom = :nom AND motdepasse = :motdepasse LIMIT 0, 1');
+            $response->execute(array(
+                'nom' => $_POST['nom'],
+                'motdepasse' => $_POST['motdepasse'],
+            ));
+            while ($data = $response->fetch(PDO::FETCH_ASSOC)) {
+                ?>
+                <div class="data">
+                    <?php
+                    foreach ($data as $key => $value) {
+                        ?>
+                        <div><?= $key . ' = ' . $value ?></div>
+                        <?php
+                    }
+                    ?>
+                </div>
+                <?php
+                $_SESSION['admin'] = $_POST['nom'];
             }
             header('Location: sql_connect_render.php');
             $response->closeCursor();
