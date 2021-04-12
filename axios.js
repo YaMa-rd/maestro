@@ -16,6 +16,16 @@ btnConnection.addEventListener("click", () => {
     .catch(function (error) {
       console.log(error);
     });
+
+  axios
+    .get("http://localhost:3005/apprenant")
+
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   console.log("gvdhhdhdslkfhdslkhfdslkj");
 });
 
