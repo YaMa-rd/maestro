@@ -125,12 +125,21 @@ div#theatre {
         bottom: calc(100% / 4);
         right: calc((100% / 2) - 50px);
         display: flex;
+        justify-content: center;
+        align-items: center;
         height: 50px;
         border-style: solid;
         background:#3d0922;
-        border-radius: 5px solid gold;
+        border-radius: 25px;
         color: #d3b865;
         font: bold 15px arial, sans-serif;
         letter-spacing: 2px;
         text-shadow:none;
+        border-color: #cbb260;
+        padding: 20px;
+    }
+
+    button#enter_front:hover {
+        background: rgb(92,14,51);
+        background: linear-gradient(230deg, rgba(92,14,51,1) 28%, rgba(6,16,17,1) 100%);
     }
