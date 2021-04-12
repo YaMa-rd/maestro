@@ -19,6 +19,8 @@ $black: black;
       
 /* CSS DES BOUTONS */
  .bouton{
+    display: flex;
+    justify-content: center;
     border-radius: 15px;
     border-color: $or;
     background-color: $noir;
