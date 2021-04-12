@@ -2,22 +2,6 @@ const btnConnection = document.querySelector(".btnaxios");
 
 btnConnection.addEventListener("click", () => {
   axios
-    .post("http://localhost:3005/admin/enseignant", {
-      nom: "Professeur trevor",
-      motdepasse: 124654,
-      image: "",
-      mail: "trevor@maestro.com",
-      age: "23",
-      genre: "homme",
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-
-  axios
     .get("http://localhost:3005/apprenant")
 
     .then(function (response) {
@@ -40,4 +24,22 @@ btnConnection.addEventListener("click", () => {
 //     age: "34",
 //     genre: "homme",
 //   },
+// });
+
+// btnConnection.addEventListener("click", () => {
+//   axios
+//     .post("http://localhost:3005/admin/enseignant", {
+//       nom: "Professeur trevor",
+//       motdepasse: 124654,
+//       image: "",
+//       mail: "trevor@maestro.com",
+//       age: "23",
+//       genre: "homme",
+//     })
+//     .then(function (response) {
+//       console.log(response);
+//     })
+//     .catch(function (error) {
+//       console.log(error);
+//     });
 // });
