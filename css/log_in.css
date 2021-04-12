@@ -1,0 +1,27 @@
+.connexion{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: black;
+    font-size: 30px;
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: black;
+}
+body{
+    background-image: url("/assets/img/scene\ opacite\ 70.png");
+}
+nav {
+    text-align: center;
+}
+.submit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
