@@ -6,6 +6,12 @@ btnConnection.addEventListener("click", () => {
 
     .then(function (response) {
       console.log(response);
+      response.data.forEach((element) => {
+        var li = document.createElement("li");
+        li.innerHTML = `${element.nom}, ${element.age} ans, ${element.genre}`;
+        console.log(element);
+        document.body.appendChild(li);
+      });
     })
     .catch(function (error) {
       console.log(error);
