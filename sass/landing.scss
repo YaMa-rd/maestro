@@ -1,0 +1,86 @@
+@import "../css/landing.css";
+$black: black;
+
+/* CHARTRE GRAPHIQUE */
+    $or: #CBB260;
+    $violet: #6B103C;
+    $noir: #061011;
+    $gris: #486475;
+
+#video {
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    z-index: -100;
+    background-size: cover;
+    transition: 0s opacity;
+}
+      
+/* CSS DES BOUTONS */
+ 
+
+ /*.btn[disabled]{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border-color: $or;
+    background-color: $noir;
+    color: $or;
+    width: 200px;
+ }*/
+
+
+#section1{
+    background-color: $violet;
+    background-image: url("../photos/bg_portée.svg");
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#section1  * {
+    padding-top: 20px;
+}
+
+.icones{
+    width: 150px;
+    overflow: hidden;
+}
+
+h4{
+    text-align: center;
+}
+
+
+.mockup{
+    background-image: url("../photos/Notes\ dorées.svg");
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+}
+
+p{
+    width: 500px;
+    overflow: hidden;
+    text-align: center;
+}
+
+#photo{
+    border-radius: 25%;
+}
+
+hr{
+    align-items: center;
+    display: flex;
+    text-align: center;
+    border-style: solid;
+}
+
+#fond{
+    background-color: $gris;
+}
+
+@import "../sass/bootstrap-4.6.0/scss/bootstrap.scss"
+
