@@ -18,13 +18,15 @@ $black: black;
 }
       
 /* CSS DES BOUTONS */
- .bouton{
+ #bouton{
     display: flex;
     justify-content: center;
+    align-items: center;
     border-radius: 15px;
     border-color: $or;
     background-color: $noir;
     color: $or;
+    width: 200px;
  }
 
 
@@ -49,12 +51,19 @@ h4{
     text-align: center;
 }
 
+
 .mockup{
-    background-image: url("../photos/scene.jpg");
+    background-image: url("../photos/Notes\ de\ musique.svg");
     background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
 }
 
+p{
+    width: 500px;
+    overflow: hidden;
+}
 
-/* Rideaux d'entrée au site   */
-
-
+#photo{
+    border-radius: 25%;
+}

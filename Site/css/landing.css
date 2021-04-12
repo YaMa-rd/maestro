@@ -12,11 +12,15 @@
 }
 
 /* CSS DES BOUTONS */
-.bouton {
+#bouton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 15px;
   border-color: #CBB260;
   background-color: #061011;
   color: #CBB260;
+  width: 200px;
 }
 
 #section1 {
@@ -36,6 +40,28 @@
   overflow: hidden;
 }
 
-h3 {
+h4 {
   text-align: center;
+}
+
+.mockup {
+  background-image: url("../photos/Notes de musique.svg");
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: cover;
+}
+
+p {
+  width: 500px;
+  overflow: hidden;
+}
+
+#carte {
+  border-radius: 15px;
+  border-color: #CBB260;
+  color: #6B103C;
+}
+
+#photo {
+  border-radius: 25%;
 }
